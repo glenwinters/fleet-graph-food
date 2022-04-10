@@ -1,0 +1,16 @@
+{
+  "name": "fleet-graph-food",
+  "version": "0.0.1",
+  "description": "Fleet component: GraphQL subgraph for food-related things",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.6.7",
+    "graphql": "^16.3.0",
+    "nodemon": "^2.0.15"
+  }
+}
