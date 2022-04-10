@@ -1,4 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
+const { buildSubgraphSchema } = require('@apollo/subgraph');
 
 const typeDefs = gql`
   type Recipe {
@@ -36,8 +37,12 @@ const resolvers = {
     },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+    schema: buildSubgraphSchema({typeDefs, resolvers }),
+});
 
-server.listen().then(({ url }) => {
+server.listen({
+    port: 4010
+}).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`)
 });
